@@ -1,9 +1,12 @@
 from flask import Flask, render_template
 import os
+import dotenv
+from openai import OpenAI
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
+dotenv.load_dotenv()
+client = OpenAI()
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():
