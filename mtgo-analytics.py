@@ -1,4 +1,7 @@
 from flask import Flask, render_template
+import os
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
 
