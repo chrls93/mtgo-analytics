@@ -45,9 +45,7 @@ body {
 
 }
 
-.content_label {
-    text-align: center;
-}
+
 .card {
     display: flex;
     margin: 20px 0;
