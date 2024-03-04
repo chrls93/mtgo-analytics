@@ -1,4 +1,10 @@
 /* styles.css */
+.menu {
+    display: inline-block;
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -37,4 +43,37 @@ body {
     position: fixed;
     bottom: 0;
 
+}
+
+.content_label {
+    text-align: center;
+}
+.card {
+    display: flex;
+    margin: 20px 0;
+}
+
+.card-header {
+    flex: 1;
+    text-align: center;
+}
+
+.card-details {
+    width: auto;
+    flex: 2;
+    padding: 0 20px;
+    text-align: left;
+    max-width: 300px; 
+    /*word-wrap: break-word;*/
+}
+
+.card-image {
+    flex: 1;
+    max-width: 200px; /* Set maximum width for the image container */
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%; /* Set maximum height for the image */
+    height: auto;
 }
