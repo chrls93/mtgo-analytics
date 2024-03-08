@@ -10,33 +10,68 @@
     <div class="header">
         {% include 'header.html' %}
     </div>
-    <h2>{{ card_name }}</h2>
+    <div class="card_name">
+    <h2>Details of your randomly chosen card</h2>
+    </div>
     <div class="container">
         <div class="content">
             <div class="card">
                 <div class="card-body">
                     <table>
-                        <thead>
-                            <col>
-                            <div class="content_label">
-                                Card Information
-                            </div>
-                            </col>
-                        </thead>
                         <tbody>
                             <tr>
                                 <td class="card-image">
                                     <img src="{{ card_image }}" alt="{{ card_name }}">
                                 </td>
                                 <td class="card-details">
+                                    <h2>{{ card_name }}</h2>
                                     <p><strong>Mana Cost:</strong> {{ mana_cost }}</p>
                                     <p><strong>Type Line:</strong> {{ type_line }}</p>
                                     <p><strong>Oracle Text:</strong> {{ oracle_text }}</p>
                                     <p><strong>Power/Toughness:</strong> {{ power }}/{{ toughness }}</p>
                                 </td>
+                                <td class="card-analysis">
+                                    <h2>Chat GPT advice</h2>
+                                    <button id="getInsightsBtn">Get Insights</button>
+                                    <div id="insights"></div>
+                                    <script>
+                                        document.getElementById("getInsightsBtn").addEventListener("click", function() {
+                                            // Get card data
+                                            var cardData = {
+                                                card_name: "{{ card_name }}",
+                                                mana_cost: "{{ mana_cost }}",
+                                                type_line: "{{ type_line }}",
+                                                oracle_text: "{{ oracle_text }}",
+                                                power: "{{ power }}",
+                                                toughness: "{{ toughness }}",
+                                            };
+                                    
+                                            // Send request to OpenAI
+                                            fetch('/send_request_to_openai', {
+                                                method: 'POST',
+                                                headers: {
+                                                    'Content-Type': 'application/json'
+                                                },
+                                                body: JSON.stringify(cardData)
+                                            }).then(response => {
+                                                if (response.ok) {
+                                                    return response.json();
+                                                } else {
+                                                    throw new Error("Error sending request!");
+                                                }
+                                            }).then(data => {
+                                                // Update DOM with response values
+                                                document.getElementById("insights").innerHTML = data.insights;
+                                            }).catch(error => {
+                                                console.error('Error:', error);
+                                                alert(error.message);
+                                            });
+                                        });
+                                    </script>
+                                    
+                                </td>
                             </tr>
                         </tbody>
-                    </table>
                 </div>
             </div>
         </div>

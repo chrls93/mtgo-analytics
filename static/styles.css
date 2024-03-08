@@ -55,7 +55,9 @@ body {
     flex: 1;
     text-align: center;
 }
-
+.card_name {
+    text-align: center;
+}
 .card-details {
     width: auto;
     flex: 2;
@@ -64,7 +66,15 @@ body {
     max-width: 300px; 
     /*word-wrap: break-word;*/
 }
-
+.card-analysis {
+    width: 30%;
+    flex: 2;
+    padding: 0 20px;
+    text-align: right;
+    max-width: 300px;
+    postion: fixed;
+    /*word-wrap: break-word;*/
+}
 .card-image {
     flex: 1;
     max-width: 200px; /* Set maximum width for the image container */
