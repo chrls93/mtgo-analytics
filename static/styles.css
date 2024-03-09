@@ -45,7 +45,6 @@ body {
 
 }
 
-
 .card {
     display: flex;
     margin: 20px 0;
@@ -55,9 +54,11 @@ body {
     flex: 1;
     text-align: center;
 }
+
 .card_name {
     text-align: center;
 }
+
 .card-details {
     width: auto;
     flex: 2;
@@ -66,14 +67,12 @@ body {
     max-width: 300px; 
     /*word-wrap: break-word;*/
 }
-.card-analysis {
+.insights {
     width: 30%;
-    flex: 2;
+    /*flex: 2;
     padding: 0 20px;
     text-align: right;
-    max-width: 300px;
-    postion: fixed;
-    /*word-wrap: break-word;*/
+    max-width: 300px;*/
 }
 .card-image {
     flex: 1;
