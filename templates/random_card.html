@@ -11,7 +11,7 @@
         {% include 'header.html' %}
     </div>
     <div class="card_name">
-    <h2>Details of your randomly chosen card</h2>
+    <h2>Card details</h2>
     </div>
     <div class="container">
         <div class="content">
@@ -30,23 +30,37 @@
                                     <p><strong>Oracle Text:</strong> {{ oracle_text }}</p>
                                     <p><strong>Power/Toughness:</strong> {{ power }}/{{ toughness }}</p>
                                 </td>
-                                <td class="card-analysis">
-                                    <h2>Chat GPT advice</h2>
-                                    <div id="insights">
-                                        {{ insights }}
-                                    </div>
-         
-                                        
-                                    
-                                </td>
                             </tr>
                         </tbody>
+                    </table>    
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-        {% include 'footer.html' %}
+    <div class="card_name">
+        <h2>AI Assistant analysis</h2>
+        </div>
+    <div class="container">
+        <div class="content">
+            <div class="card">
+                <div class="card-body">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="ai-card-details">
+                                    <h2>{{ card_name }}</h2>
+                                    <p>{{ insights }}</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>    
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+<div class="footer">
+    {% include 'footer.html' %}
+</div>
 </body>
 </html>

@@ -10,15 +10,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Light gray background */
-    color: #333; /* Default text color */
+    /* background-color: #f8f9fa; Light gray background */
+    /* color: #333; Default text color */
+    color-scheme: light dark;
+    background-color: color-mix(in srgb, Canvas, CanvasText 2.5%);
+    color: color-mix(in srgb, CanvasText, Canvas 15%);
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff; /* White background */
+    /*background-color: #ffffff;  White background */
+    background-color: Canvas;
     border-radius: 8px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
 }
@@ -65,6 +69,14 @@ body {
     padding: 0 20px;
     text-align: left;
     max-width: 300px; 
+    /*word-wrap: break-word;*/
+}
+.ai-card-details {
+    width: auto;
+    flex: 2;
+    padding: 0 20px;
+    text-align: center;
+    /*max-width: 300px; */
     /*word-wrap: break-word;*/
 }
 .insights {
