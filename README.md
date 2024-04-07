@@ -1,10 +1,13 @@
 TODO
 update readme file
+
 This is repository for my simple project.
 
 MTGO Analytics
+Currently hosted on https://mtgo-analytics.onrender.com
 
-Features:
+
+Features
 
 SCRAPE
 TO DO Decklists from recent tournaments held on Magic the Gathering ONLINE
